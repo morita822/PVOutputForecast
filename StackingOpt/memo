@@ -1,0 +1,29 @@
+(ターミナルコマンド)
+cd source/hiroki/study_230408/StackingOpt
+python LGBM002.py --config CFG1
+
+(notebook)
+EDA002:引継ぎ資料を関数化
+EDA003:EDA002をもとに予測精度を計算
+EDA004:EDA003を整理,mesh_data（オプティカルフローの予測値）とinterpolated_mesh_data（欠損値補間のメッシュデータ)のcsvを作成
+EDA005:EDA003,EDA004でmin_latをid_latにしていたものをid_lat_meshに変更する。
+       CNN等の計算の時に、usenumsでPVのあるとこだけ計算するように変数を作る。
+EDA006 オプティカルフローの予測値の欠損値補間の前処理
+EDA007:EDA006で作ったデータの整理、
+
+
+#最初はCNNから取り組む。最適なところでモデル保存したい、緯度経度をmergeするとき、小数点をroundしているかを確認する。
+ConvLSTM001:train_data 6月 test_data 7月
+ConvLSTM002:train_data 4~6月 test_data 7月
+ConvLSTM003:対象のメッシュだけMSE計算、今のところうまくいかず。train_data 6月 test_data 7月
+
+#過去の研究の焼き直し
+LGBM001:ベースライン
+LGBM002:オプティカルフローの予測値を加える。いちをpythonファイルを作る
+              cd source/hiroki/study_230408/StackingOpt
+              python LGBM002.py --config CFG1
+LGBM003:フロー特徴量を加える。
+LGBM004:オプティカルフローのunique_idの予測値を加える。
+
+#全国のデータを用いて予測を行う。
+LGBM2001
